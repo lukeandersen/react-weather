@@ -5,7 +5,7 @@ import SearchForm from '../components/search';
 const styles = {
 	maxWidth: '440px',
 	margin: '10em auto',
-	padding: '.5em 1em 1em'
+	padding: '0 1em .5em'
 };
 
 const Home = React.createClass({

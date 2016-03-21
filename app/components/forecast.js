@@ -23,13 +23,13 @@ const Forecast = React.createClass({
 		}
 	},
 	getData(city) {
-		Api.getWeather(city).then(function(response) {
+		Api.getWeather(city).then((response) => {
 			this.setState({
 				forecast: response.data,
 				isLoading: false,
-				location: response.data.city.name +', '+ response.data.city.country
+				location: `${response.data.city.name }, ${response.data.city.country}`
 			});
-		}.bind(this));
+		});
 	},
 	handleClick(forecast) {
 		this.context.router.push({
