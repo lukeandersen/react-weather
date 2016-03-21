@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prod": "webpack -p",
-    "start": "webpack-dev-server --inline --hot"
+    "build": "webpack -p",
+    "server": "webpack-dev-server --inline --hot"
   },
   "author": "",
   "license": "ISC",
