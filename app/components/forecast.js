@@ -40,26 +40,33 @@ const Forecast = React.createClass({
 			}
 		});
 	},
+	renderForecast() {
+		if(this.state.isLoading) {
+			return (
+				<p className="text-center">Loading...</p>
+			)
+		} else {
+			return (
+				<div className="container">
+					<h3 className="text-center">{this.state.forecast.city.name}, {this.state.forecast.city.country} <br/> <small>6 day forecast</small></h3>
+					<br/>
+					<div className="row">
+						{this.state.forecast.list.map((obj, key) => { 
+							return (
+								<div className="col-md-4" key={key}>
+									<WeatherItem {...obj} handleClick={this.handleClick.bind(null, obj)} />
+								</div>
+							)
+						})}
+					</div>
+				</div>
+			)
+		}
+	},
 	render() {
 		return (
 			<div>
-				{
-					this.state.isLoading === true ?
-					<p className="text-center">Loading...</p> :
-					<div className="container">
-						<h3 className="text-center">{this.state.forecast.city.name}, {this.state.forecast.city.country} <br/> <small>6 day forecast</small></h3>
-						<br/>
-						<div className="row">
-							{this.state.forecast.list.map((obj, key) => { 
-								return (
-									<div className="col-md-4" key={key}>
-										<WeatherItem {...obj} handleClick={this.handleClick.bind(null, obj)} />
-									</div>
-								)
-							})}
-						</div>
-					</div>
-				}
+				{this.renderForecast()}
 			</div>
 		)
 	}

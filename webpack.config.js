@@ -25,10 +25,15 @@ module.exports = {
 			},
 			{
 				test: /\.css$/, 
-				loader: 'style-loader!css-loader'
+				loader: 'style-loader!css-loader!postcss-loader'
 			}
 		],
 		noParse: [/moment.js/]
+	},
+	postcss: function () {
+	    return [
+	        require('postcss-cssnext')
+	    ];
 	},
 	plugins: [copyHTMLConfig],
 	devtool: 'source-map',

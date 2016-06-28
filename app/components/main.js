@@ -1,14 +1,13 @@
 import React from 'react';
 import SearchForm from '../components/search';
-import Bootstrap from '../css/bootstrap.css';
-import MainCSS from '../css/main.css';
+import styles from '../styles/main.css';
 
 const Main = React.createClass({
 	render() {
 		return (
 			<div>
 				<nav className="navbar navbar-default navbar-static-top">
-				  <div className="container-fluid">
+				  <div className={styles.container}>
 				    <div className="navbar-header">
 				      <a className="navbar-brand" href="#"><strong>MyWeather</strong></a>
 				    </div>
